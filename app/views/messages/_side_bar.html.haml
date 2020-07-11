@@ -1,0 +1,32 @@
+.SideBar
+  .SideBar__LeftHeader
+    .SideBar__LeftHeader--list
+      .userName
+        masa
+      .iconList
+        = link_to "#", class: "fas fa-edit" do
+          = icon('fas', 'fa-edit', class: "iconList-editn")
+        = link_to "#", class: "fas fa-cog" do
+          = icon('fas', 'fa-cog', class: "iconList-editn")
+  .SideBar__GroupList
+    .SideBar__GroupList--Group
+      .Groupname
+        techcamp1
+      .Groupmessage
+        test1
+    .SideBar__GroupList--Group
+      .Groupname
+        techcamp2
+      .Groupmessage
+        test2
+    .SideBar__GroupList--Group
+      .Groupname
+        techcamp3
+      .Groupmessage
+        test3
+
+        -# %a{href: "#"}
+        -#   %i.far.fa-edit
+        -# = link_to "#", class: "fas fa-cog" do
+        -# %a{:href => "#"}
+        -#   %i.fas.fa-cog

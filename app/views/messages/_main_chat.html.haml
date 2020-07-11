@@ -1,0 +1,34 @@
+.Chat
+  .Chat__RightHeader
+    .Chat__RightHeader--group
+      .groupName
+        test
+      .memberList
+        Member:masa
+    .Chat__RightHeader--editButton
+      = link_to "#", class: "editButton" do
+        Edit
+
+  .Chat__MessageField
+    .Chat__MessageField--MessageInfo
+      .UserName
+        masa
+      .date
+        2000.7
+    .Chat__MessageField--Message
+      おはよう！
+    .Chat__MessageField--MessageInfo
+      .UserName
+        masa
+      .date
+        2000.7
+    .Chat__MessageField--Message
+      おはよう！
+  .Chat__Footer
+    .Chat__Footer--Form
+      .inputcontens
+        %input{type: "text", class: "inputcontens__text", placeholder: "type a message"}
+        %label{class: "inputcontens__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "inputcontens__image__file"}
+      %input{type: "submit", class: "submit-btn"}
