@@ -2,11 +2,11 @@
   .SideBar__LeftHeader
     .SideBar__LeftHeader--list
       .userName
-        masa
+        = current_user.name
       .iconList
         = link_to "#", class: "fas fa-edit" do
           = icon('fas', 'fa-edit', class: "iconList-editn")
-        = link_to "#", class: "fas fa-cog" do
+        = link_to edit_user_path(current_user), class: "fas fa-cog" do
           = icon('fas', 'fa-cog', class: "iconList-editn")
   .SideBar__GroupList
     .SideBar__GroupList--Group
