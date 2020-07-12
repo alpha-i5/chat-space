@@ -47,10 +47,12 @@
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     display: block;
-    &--Group {
+    padding: 0 40px;
+    .Group-list-link {
       padding: 20px 0 40px 20px;
       color: #ffffff;
       font-weight: bold;
+      text-decoration: none;
       .Groupname {
         font-size: 15px;
       }

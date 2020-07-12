@@ -4,23 +4,15 @@
       .userName
         = current_user.name
       .iconList
-        = link_to "#", class: "fas fa-edit" do
+        = link_to new_group_path, class: "fas fa-edit" do
           = icon('fas', 'fa-edit', class: "iconList-editn")
         = link_to edit_user_path(current_user), class: "fas fa-cog" do
           = icon('fas', 'fa-cog', class: "iconList-editn")
   .SideBar__GroupList
-    .SideBar__GroupList--Group
-      .Groupname
-        techcamp1
-      .Groupmessage
-        test1
-    .SideBar__GroupList--Group
-      .Groupname
-        techcamp2
-      .Groupmessage
-        test2
-    .SideBar__GroupList--Group
-      .Groupname
-        techcamp3
-      .Groupmessage
-        test3
+    - current_user.groups.each do |group|
+      .SideBar__GroupList--Group
+        = link_to '#', class: "Group-list-link" do
+          .Groupname
+            = group.name
+          .Groupmessage
+            メッセージはまだありません
