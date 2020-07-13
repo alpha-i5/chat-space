@@ -131,45 +131,45 @@
     height: 90px;
     padding: 20px 40px;
 
-    &--Form {
+    .Form {
       display: flex;
-      .inputcontens {
+      .Form__contents {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 100vw;
         position: relative;
       }
-        input {
+      .Form__inputContent {
           padding: 0 40px 0 10px;
           height: 50px;
           width: 100%;
           color: #434a54;
           border-style: none;
         }
-        i {
+        .far {
           position: absolute;
           top: 13px;
           right: 10px;
-          display: flex;;
+          display: flex;
           font-size: 25px;
-           &__file {
-             display: none;
-           }
+        }
+        .Hidden {
+          display: none;
         }
     }
-     .submit-btn {
+     .Form__submit {
         width: 100px;
         height: 50px;
         padding: 0 30px;
         margin-left: 15px;
         background-color: #38aef0;
         color: #ffffff;
-        font-size: 16px;  
+        font-size: 16px;
+        border: none;
       }
       .inputcontens__image__file {
         display: none;
         }
-
   }
 }

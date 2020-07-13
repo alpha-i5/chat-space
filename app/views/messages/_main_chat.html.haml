@@ -2,33 +2,39 @@
   .Chat__RightHeader
     .Chat__RightHeader--group
       .groupName
-        test
+        = @group.name
       .memberList
-        Member:masa
+        Member：
+        - @group.users.each do |user|
+          = user.name
     .Chat__RightHeader--editButton
-      = link_to "#", class: "editButton" do
+      = link_to "http://localhost:3000/groups/1/edit", class: "editButton" do
         Edit
 
   .Chat__MessageField
-    .Chat__MessageField--MessageInfo
-      .UserName
-        masa
-      .date
-        2000.7
-    .Chat__MessageField--Message
-      おはよう！
-    .Chat__MessageField--MessageInfo
-      .UserName
-        masa
-      .date
-        2000.7
-    .Chat__MessageField--Message
-      おはよう！
+    = render @messages
+    -# .Chat__MessageField--MessageInfo
+    -#   .UserName
+    -#     masa
+    -#   .date
+    -#     2000.7
+    -# .Chat__MessageField--Message
+    -#   おはよう！
+    -# .Chat__MessageField--MessageInfo
+    -#   .UserName
+    -#     masa
+    -#   .date
+    -#     2000.7
+    -# .Chat__MessageField--Message
+    -#   おはよう！
   .Chat__Footer
     .Chat__Footer--Form
-      .inputcontens
-        %input{type: "text", class: "inputcontens__text", placeholder: "type a message"}
-        %label{class: "inputcontens__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "inputcontens__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .Form__contents
+        = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
+        = f.label :image, class: 'Form__inputImage' do
+          = icon('far', 'image', class: 'Form__icon')
+          = f.file_field :image, class: 'Hidden'
+      = f.submit 'Send', class: 'Form__submit'
+      .MessageField
+        = render @messages
