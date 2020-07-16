@@ -105,10 +105,14 @@
   &__MessageField{
     background-color: #fafafa;
     height: calc(100vh - 100px - 90px);
+    overflow: scroll;
     &--MessageInfo {
       display: flex;
       padding: 35px 40px 0;
     }
+      .MessageBox {
+        margin-left: 10px;
+      }
       .UserName {
         color: #333333;
         font-size: 16px;
@@ -156,6 +160,9 @@
         }
         .Hidden {
           display: none;
+        }
+        .field_with_errors {
+          width: 100%;
         }
     }
      .Form__submit {
